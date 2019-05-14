@@ -1,7 +1,9 @@
 <template>
   <v-container>
     <v-layout wrap>
-      <GameCard v-for="game in games" :key="game.id" v-bind:game="game" />
+      <GameCard v-for="game in games" 
+        :key="game.id" 
+        :game="game" />
     </v-layout>
   </v-container>
 </template>

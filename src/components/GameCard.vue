@@ -1,14 +1,14 @@
 <template>
-    <v-flex sm4 pa-4 align-start justify-space-around row fill-height>
+    <v-flex sm4 pa-4 align-space-between justify-space-around row fill-height>
         <v-card>
-          <!-- <v-card-title primary-title>
-            <h3 class="headline mb-0">Game</h3>
-          </v-card-title> -->
+          <v-card-title primary-title>
+            <h3 class="headline mb-0">{{game.title}}</h3>
+          </v-card-title>
           <v-img
-            src="img/ryse.jpeg"
+            :src=game.image
           ></v-img>
           <v-card-text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aspernatur modi incidunt exercitationem facilis doloribus excepturi hic provident vel nostrum. Sapiente accusamus distinctio labore, molestias porro consequatur eaque unde enim.
+            {{game.description}}
           </v-card-text>
           <v-card-actions>
             <v-btn color="info">
@@ -25,7 +25,7 @@
             </v-btn>
             <v-spacer></v-spacer>
             <div class="text-xs-center">
-              <v-chip color="red" text-color="white">&euro; 19,95</v-chip>
+              <v-chip color="red" text-color="white">&euro; {{game.price}}</v-chip>
             </div>
           </v-card-actions>
         </v-card>
@@ -35,9 +35,17 @@
 <script>
 export default {
     name: 'GameCard',
-    props: [ 'game' ],
-    data: () => ({}),
-    created: () => {}
+    props: {
+      game: Object
+    },
+    data() {
+      return {
+        
+      }
+    },
+    created() {
+      
+    }
 }
 </script>
 
