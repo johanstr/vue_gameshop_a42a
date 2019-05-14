@@ -1,10 +1,7 @@
 <template>
     <v-flex sm4 pa-4 align-space-between justify-space-around row fill-height>
         <v-card>
-          <v-card-title primary-title>
-            <h3 class="headline mb-0">{{game.title}}</h3>
-          </v-card-title>
-          <v-img
+          <v-img style="max-height: 410px;"
             :src=game.image
           ></v-img>
           <v-card-text>
@@ -17,7 +14,9 @@
               </v-icon>
               Info
             </v-btn>
-            <v-btn color="success">
+            <v-btn 
+              @click="addToShoppingCart"
+              color="success">
               <v-icon>
                 shopping_cart
               </v-icon>
@@ -43,8 +42,10 @@ export default {
         
       }
     },
-    created() {
-      
+    methods: {
+      addToShoppingCart() {
+        console.log('Toevoegen ' + this.$props.game.id)
+      }
     }
 }
 </script>
